@@ -1,0 +1,1 @@
+# handson-cloud-msa-outer

@@ -128,32 +128,3 @@ master:
                             username: ${GITHUB_USERNAME}
                             password: ${GITHUB_TOKEN}
                             description: "Github personal token"
-        init-jobs: |
-            jobs:
-              - script: >
-                    multibranchPipelineJob('terraform-jenkins-create-demo') {
-                        factory {
-                        workflowBranchProjectFactory {
-                            scriptPath('example-pipelines/environments/Jenkinsfile')
-                        }
-                        }
-                        branchSources {
-                        github {
-                            id('12312313')
-                            scanCredentialsId('github-token')
-                            repoOwner("${GITHUB_USERNAME}")
-                            repository("${GITHUB_REPO}")
-                            buildOriginBranch(true)
-                            buildOriginPRMerge(true)
-                            includes("dev prod PR*")
-                        }
-                        }
-                        orphanedItemStrategy {
-                        discardOldItems {
-                            numToKeep(10)
-                        }
-                        }
-                        triggers {
-                        periodic(1)
-                        }
-                    }

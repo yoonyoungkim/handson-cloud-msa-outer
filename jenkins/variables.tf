@@ -53,3 +53,8 @@ variable "github_repo" {
   description = "대상 github repository 이름"
   default     = "handson-cloud-msa-outer"
 }
+
+variable "tfstate_gcs_backend" {
+  description = "Name of the GCS bucket to use as a backend for Terraform State"
+  default     = "TFSTATE_GCS_BACKEND"
+}

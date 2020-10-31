@@ -13,7 +13,7 @@
 # limitations under the License.
 
 master:
-  tag: "2.248"
+  tag: "2.264"
   containerEnv:
     - name: PROJECT_ID
       valueFrom:

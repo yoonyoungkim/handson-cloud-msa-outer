@@ -1,5 +1,5 @@
 environment = "dev"
-project_id = "PROJECT_ID"
+project_id = "architect-certification-289902"
 member_id  = "01"
 region     = "us-central1"
 zones      = ["us-central1-a"]

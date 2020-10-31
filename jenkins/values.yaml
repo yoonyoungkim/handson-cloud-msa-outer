@@ -43,18 +43,18 @@ master:
   servicePort: 80
   serviceType: LoadBalancer
   installPlugins:
-    - kubernetes:1.26.2
+    - kubernetes:1.27.3
     - workflow-job:2.40
     - workflow-aggregator:2.6
-    - credentials-binding:1.23
-    - git:4.3.0
-    - blueocean:1.23.2
+    - credentials-binding:1.24
+    - git:4.4.5
+    - blueocean:1.24.2
     - docker-custom-build-environment:1.7.3
-    - credentials:2.3.11
+    - credentials:2.3.13
     - docker-commons:1.17
-    - docker-workflow:1.23
+    - docker-workflow:1.24
     - job-dsl:1.77
-    - configuration-as-code:1.41
+    - configuration-as-code:1.45
     - jdk-tool:1.4
   JCasC:
     enabled: true

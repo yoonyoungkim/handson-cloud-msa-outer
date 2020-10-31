@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket = "architect-certification-289902-tfstate"
+    bucket = "${var.project_id}-tfstate"
     prefix = "env/dev"
   }
 }

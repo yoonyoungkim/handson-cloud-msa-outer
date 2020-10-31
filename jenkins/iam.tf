@@ -22,16 +22,6 @@ module "workload_identity" {
 }
 
 /*****************************************
-  Grant Jenkins SA Permissions to store
-  TF state for Jenkins Pipelines
- *****************************************/
-resource "google_storage_bucket_iam_member" "tf-state-writer" {
-  bucket = var.tfstate_gcs_backend
-  role   = "roles/storage.admin"
-  member = module.workload_identity.gcp_service_account_fqn
-}
-
-/*****************************************
   Grant Jenkins SA Permissions project editor
  *****************************************/
 resource "google_project_iam_member" "jenkins-project" {

@@ -16,5 +16,5 @@ provider "kubernetes" {
   load_config_file       = false
   host                   = google_container_cluster.primary.endpoint
   token                  = data.google_client_config.default.access_token
-  cluster_ca_certificate = base64decode(google_container_cluster.primary.ca_certificate)
+  cluster_ca_certificate = base64decode(google_container_cluster.primary.master_auth.0.cluster_ca_certificate)
 }

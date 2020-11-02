@@ -1,6 +1,6 @@
 # VPC
 resource "google_compute_network" "vpc" {
-  name                    = "${var.project_id}-${var.member_id}-dev"
+  name                    = "${var.project_id}-${var.member_id}-dev-vpc"
   auto_create_subnetworks = "false"
 }
 

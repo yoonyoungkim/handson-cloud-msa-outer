@@ -13,5 +13,6 @@ resource "helm_release" "jenkins" {
 
   depends_on = [
     kubernetes_secret.gh-secrets,
+    kubernetes_secret.jenkins-secrets,
   ]
 }

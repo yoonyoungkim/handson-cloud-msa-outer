@@ -1,6 +1,6 @@
 # GKE cluster
 resource "google_container_cluster" "primary" {
-  name     = "${var.project_id}-${var.member_id}-gke"
+  name     = "${var.project_id}-${var.member_id}-dev"
   location = var.region
   node_locations = var.zones
 

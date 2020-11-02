@@ -1,5 +1,5 @@
 project_id = "PROJECT_ID"
-tfstate_gcs_backend = "PROJECT_ID-tfstate"
+tfstate_gcs_backend = "PROJECT_ID-MEMBER_ID-tfstate"
 region = "us-central1"
 zones = ["us-central1-b"]
 ip_range_pods_name = "ip-range-pods"

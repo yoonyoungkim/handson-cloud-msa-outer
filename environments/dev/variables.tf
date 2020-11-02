@@ -47,3 +47,7 @@ variable "machine_type" {
   default = "n1-standard-1"
   description = "Node pool machine type"
 }
+
+
+data "google_client_config" "default" {
+}

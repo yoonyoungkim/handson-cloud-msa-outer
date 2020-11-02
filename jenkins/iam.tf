@@ -21,6 +21,13 @@ module "workload_identity" {
   use_existing_k8s_sa = false
 }
 
+# enable GSA to add and delete pods for jenkins builders
+resource "google_project_iam_member" "cluster-dev" {
+  project = module.enables-google-apis.project_id
+  role    = "roles/container.developer"
+  member  = module.workload_identity.gcp_service_account_fqn
+}
+
 /*****************************************
   Grant Jenkins SA Permissions to store
   TF state for Jenkins Pipelines

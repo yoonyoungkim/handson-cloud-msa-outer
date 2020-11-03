@@ -48,7 +48,7 @@ master:
     - workflow-aggregator:2.6
     - credentials-binding:1.24
     - git:4.4.5
-    - blueocean:1.24.2
+    - blueocean:1.24.3
     - docker-custom-build-environment:1.7.3
     - credentials:2.3.13
     - docker-commons:1.17
@@ -56,6 +56,9 @@ master:
     - job-dsl:1.77
     - configuration-as-code:1.45
     - jdk-tool:1.4
+    - google-oauth-plugin:1.0.2
+    - google-container-registry-auth:0.3
+    -  docker-build-step:2.6
   JCasC:
     enabled: true
     configScripts:

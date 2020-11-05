@@ -1,0 +1,18 @@
+---
+  controller: 
+    metrics: 
+      enabled: true
+      serviceMonitor: 
+        selector: true
+  server: 
+    service: 
+      type: "NodePort"
+  repoServer: 
+    metrics: 
+      enabled: true
+      serviceMonitor: 
+        selector: true
+  dex: 
+    enabled: true
+  redis: 
+    enabled: true

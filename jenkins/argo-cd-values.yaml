@@ -4,9 +4,13 @@
       enabled: true
       serviceMonitor: 
         selector: true
-  # server: 
-  #   service: 
-  #     type: "LoadBalancer"
+  server: 
+    service: 
+      type: "LoadBalancer"
+    ingress:
+      annotations: {
+        nginx.ingress.kubernetes.io/ssl-redirect: "false"
+      }
   repoServer: 
     metrics: 
       enabled: true

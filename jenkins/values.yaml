@@ -41,7 +41,6 @@ master:
     - job-dsl:1.77
     # - configuration-as-code:1.45
     - jdk-tool:1.4
-    - docker-build-step:2.6
   JCasC:
     enabled: true
     configScripts:

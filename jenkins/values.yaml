@@ -20,21 +20,6 @@ master:
         secretKeyRef:
             name: jenkins-k8s-config
             key: project_id
-    - name: GITHUB_REPO
-      valueFrom:
-        secretKeyRef:
-            name: github-secrets
-            key: github_repo
-    - name: GITHUB_USERNAME
-      valueFrom:
-        secretKeyRef:
-            name: github-secrets
-            key: github_username
-    - name: GITHUB_TOKEN
-      valueFrom:
-        secretKeyRef:
-            name: github-secrets
-            key: github_token
     - name: jenkins_tf_ksa
       valueFrom:
         secretKeyRef:
@@ -118,15 +103,3 @@ master:
                               podRetention: "never"
                               activeDeadlineSeconds: "500"
                               slaveConnectTimeout: "2000"
-        credentials: |
-            credentials:
-                system:
-                    domainCredentials:
-                    - credentials:
-                        - usernamePassword:
-                            scope: GLOBAL
-                            id: "github-token"
-                            username: ${GITHUB_USERNAME}
-                            password: ${GITHUB_TOKEN}
-                            description: "Github personal token"
-                            

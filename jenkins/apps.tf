@@ -16,7 +16,6 @@ resource "helm_release" "jenkins" {
   values = [data.local_file.helm_chart_values.content]
 
   depends_on = [
-    kubernetes_secret.gh-secrets,
     kubernetes_secret.jenkins-secrets,
   ]
 }

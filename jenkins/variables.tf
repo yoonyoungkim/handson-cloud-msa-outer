@@ -41,19 +41,6 @@ variable "jenkins_k8s_config" {
   default     = "jenkins-k8s-config"
 }
 
-variable "github_username" {
-  description = "terraform이 바라보는 github의 username"
-}
-
-variable "github_token" {
-  description = "repository에 access할 수 있는 github token"
-}
-
-variable "github_repo" {
-  description = "대상 github repository 이름"
-  default     = "handson-cloud-msa-outer"
-}
-
 variable "tfstate_gcs_backend" {
   description = "Name of the GCS bucket to use as a backend for Terraform State"
   default     = "TFSTATE_GCS_BACKEND"

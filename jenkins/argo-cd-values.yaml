@@ -6,9 +6,7 @@
         selector: true
   server: 
     service: 
-      type: "LoadBalancer"
-    ingress:
-      https: false
+      type: "ClusterIP"
   repoServer: 
     metrics: 
       enabled: true

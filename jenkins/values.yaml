@@ -101,4 +101,3 @@ master:
                                     mountPath: "/tmp"
                               podRetention: "never"
                               activeDeadlineSeconds: "500"
-                              slaveConnectTimeout: "2000"

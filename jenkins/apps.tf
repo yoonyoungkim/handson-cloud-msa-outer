@@ -28,7 +28,4 @@ resource "helm_release" "argo-cd" {
   timeout    = 1200
 
   values     = [data.local_file.argo_cd_values.content]
-  depends_on = [
-    kubernetes_secret.gh-secrets,
-  ]
 }

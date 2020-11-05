@@ -6,7 +6,7 @@
         selector: true
   server: 
     service: 
-      type: "NodePort"
+      type: "LoadBalancer"
   repoServer: 
     metrics: 
       enabled: true

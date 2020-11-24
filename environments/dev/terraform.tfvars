@@ -4,4 +4,4 @@ member_id  = "01"
 region     = "us-central1"
 zones      = ["us-central1-a"]
 subnet_cidr = "10.10.0.0/16"
-machine_type = "n1-standard-4"
+machine_type = "n1-standard-8"

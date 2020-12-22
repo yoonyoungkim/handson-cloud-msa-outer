@@ -3,7 +3,7 @@ terraform {
 }
 
 provider "google" {
-  version = "~> 2.18.0"
+  version = "~> 3.1"
   project = var.project_id
   region  = var.region
 }
@@ -21,7 +21,6 @@ provider "kubernetes" {
 
 provider "helm" {
   kubernetes {
-    load_config_file       = false
     cluster_ca_certificate = base64decode(google_container_cluster.primary.master_auth.0.cluster_ca_certificate)
     host                   = google_container_cluster.primary.endpoint
     token                  = data.google_client_config.default.access_token

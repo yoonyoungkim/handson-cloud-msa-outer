@@ -4,7 +4,7 @@
 module "jenkins-gke" {
   source                   = "terraform-google-modules/kubernetes-engine/google//modules/beta-public-cluster/"
   version                  = "~> 7.0"
-  project_id               = module.enables-google-apis.project_id
+  project_id               = var.project_id
   name                     = "jenkins-MEMBER_ID"
   regional                 = false
   region                   = var.region
@@ -17,7 +17,7 @@ module "jenkins-gke" {
   monitoring_service       = "monitoring.googleapis.com/kubernetes"
   remove_default_node_pool = true
   service_account          = "create"
-  identity_namespace       = "${module.enables-google-apis.project_id}.svc.id.goog"
+  identity_namespace       = "${var.project_id}.svc.id.goog"
   node_metadata            = "GKE_METADATA_SERVER"
   node_pools = [
     {
@@ -37,7 +37,7 @@ resource "kubernetes_secret" "jenkins-secrets" {
     name = var.jenkins_k8s_config
   }
   data = {
-    project_id          = module.enables-google-apis.project_id
+    project_id          = var.project_id
     kubernetes_endpoint = "https://${module.jenkins-gke.endpoint}"
     ca_certificate      = module.jenkins-gke.ca_certificate
     jenkins_tf_ksa      = module.workload_identity.k8s_service_account_name

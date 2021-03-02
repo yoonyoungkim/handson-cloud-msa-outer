@@ -32,7 +32,7 @@ master:
     - workflow-job:2.40
     - workflow-aggregator:2.6
     - credentials-binding:1.24
-    - git:4.4.5
+    - git:4.6.0
     - blueocean:1.24.3
     - docker-custom-build-environment:1.7.3
     - credentials:2.3.15

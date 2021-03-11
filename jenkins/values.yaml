@@ -11,9 +11,9 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
+ 
 master:
-  tag: "2.264"
+  tag: "2.281"
   containerEnv:
     - name: PROJECT_ID
       valueFrom:
@@ -28,19 +28,19 @@ master:
   servicePort: 80
   serviceType: LoadBalancer
   installPlugins:
-    - kubernetes:1.27.3
+    - kubernetes:1.29.1
     - workflow-job:2.40
     - workflow-aggregator:2.6
     - credentials-binding:1.24
-    - git:4.4.5
+    - git:4.6.0
     - blueocean:1.24.3
     - docker-custom-build-environment:1.7.3
-    - credentials:2.3.13
+    - credentials:2.3.15
     - docker-commons:1.17
-    - docker-workflow:1.24
+    - docker-workflow:1.26
     - job-dsl:1.77
-    - configuration-as-code:1.45
-    - jdk-tool:1.4
+    - configuration-as-code:1.47
+    - jdk-tool:1.5
   JCasC:
     enabled: true
     configScripts:
@@ -91,10 +91,10 @@ master:
                                   ttyEnabled: true
                                   command: "/bin/sh -c"
                                   args: "cat"
-                                  resourceRequestCpu: "500m"
-                                  resourceLimitCpu: "1000m"
-                                  resourceRequestMemory: "1Gi"
-                                  resourceLimitMemory: "2Gi"
+                                  resourceRequestCpu: "1000m"
+                                  resourceLimitCpu: "4000m"
+                                  resourceRequestMemory: "2Gi"
+                                  resourceLimitMemory: "8Gi"
                               volumes:
                                 - emptyDirVolume:
                                     memory: false

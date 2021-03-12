@@ -21,7 +21,7 @@ spec:
             - name: SPRING_DATASOURCE_URL
               value: "jdbc:postgresql://postgresql-postgresql-ha-postgresql.default.svc.cluster.local:5432/eshop_db"
             - name: SPRING_DATASOURCE_USERNAME
-              value: "admin"
+              value: "eshop_user"
             - name: SPRING_DATASOURCE_PASSWORD
               value: "1234qwer" 
 ---

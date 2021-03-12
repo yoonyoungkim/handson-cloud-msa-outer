@@ -67,12 +67,12 @@ spec:
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: eshop-frontend-v2
+  name: eshop-frontend
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: eshop-frontend-v2
+    name: eshop-frontend
   minReplicas: 2
   maxReplicas: 10
   targetCPUUtilizationPercentage: 50

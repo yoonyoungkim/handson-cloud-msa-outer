@@ -23,7 +23,9 @@ spec:
             - name: SPRING_DATASOURCE_USERNAME
               value: "eshop_user"
             - name: SPRING_DATASOURCE_PASSWORD
-              value: "1234qwer" 
+              value: "1234qwer"
+            - name: SPRING_PROFILES_ACTIVE
+              value: "chaos-monkey" 
 ---
 apiVersion: v1
 kind: Service

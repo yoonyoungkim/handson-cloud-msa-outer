@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eshop-cartservice
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: eshop-cartservice
+  template:
+    metadata:
+      labels:
+        app: eshop-cartservice
+    spec:
+      containers:
+        - name: eshop-cartservice
+          image: gcr.io/architect-certification-289902/23/eshop-cartservice:1
+          ports:
+          - containerPort: 8091
+          env:
+            - name: SPRING_REDIS_CLUSTER_NODES
+              value: redis-redis-cluster.default.svc.cluster.local:6379
+            - name: SPRING_REDIS_CLUSTER_MAX-REDIRECTS
+              value: "3"
+            - name: SPRING_RABBITMQ_HOST
+              value: rabbitmq.default.svc.cluster.local
+            - name: SPRING_RABBITMQ_USERNAME
+              value: admin
+            - name: SPRING_RABBITMQ_PASSWORD
+              value: 1234qwer
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: eshop-cartservice
+spec:
+  type: ClusterIP
+  selector:
+    app: eshop-cartservice
+  ports:
+  - port: 8091
